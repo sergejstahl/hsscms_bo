@@ -1,0 +1,10 @@
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\hsscms_bo.exe.config
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\hsscms_bo.exe
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\hsscms_bo.pdb
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csprojAssemblyReference.cache
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csproj.CoreCompileInputs.cache
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.exe
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.pdb
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\Newtonsoft.Json.dll
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\Newtonsoft.Json.xml
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csproj.CopyComplete
