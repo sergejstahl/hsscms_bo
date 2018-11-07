@@ -16,25 +16,65 @@ namespace hsscms_bo
         static void Main(string[] args)
         {
 
+            int iNew = 0;
+            int iUpdate = 0;
+            int iExist = 0;
+
             using (CatalogOrganisationsContext context = new CatalogOrganisationsContext())
             {
-                var listCity = context.Cities.Select(x=>x).ToList();
+                var listCity = context.Cities.Select(x => x).ToList();
 
-                City city = new City {
-                    id = 1,
-                    name = "brest"
-                };
+                List<City> listNewCities = new List<City>();
+                listNewCities.Add(new City { id = 1, name = "Brest" });
+                listNewCities.Add(new City { id = 2, name = "Baranovichi" });
+                listNewCities.Add(new City { id = 3, name = "Pinsk" });
+                listNewCities.Add(new City { id = 4, name = "Kamenec" });
 
-                var cityitem = context.Cities.Where(x => x.id == 1).FirstOrDefault()  ?? new City {
-                    id = 1,
-                    name = "brest"
-                };
+                //IQueryable<City> iqCities = context.Cities.Where(x => listNewCities.Contains(x));
 
-                context.Entry(cityitem).State = EntityState.Added;
+                foreach (City curCity in listNewCities)
+                {
+                    City curContextCity;
+
+                    try
+                    {
+                        curContextCity = context.Cities.Where(x => x.id == curCity.id).FirstOrDefault();
+                    }
+                    catch (Exception ex)
+                    {
+                        curContextCity = null;
+                    }
+
+
+                    if (curContextCity == null)
+                    {
+                        context.Entry(curCity).State = EntityState.Added;
+
+                        iNew++;
+                    }
+                    else
+                    {
+                        if (!(curContextCity.name.Equals(curCity.name) && curContextCity.id.Equals(curCity.id)))
+                        {
+                            curContextCity.id = curCity.id;
+                            curContextCity.name = curCity.name;
+                            context.Entry(curContextCity).State = EntityState.Modified;
+
+                            iUpdate++;
+                        }
+                        else
+                        {
+                            iExist++;
+                        }
+                    }
+                }
+
                 context.SaveChanges();
             }
-            
-            
+
+            Console.WriteLine($"new={iNew}, update={iUpdate}, exist={iExist}");
+            Console.Read();
+
             //string pathJson = @"G:\rep\hsscms_bo\predpr2.json";
             //var strJson = File.ReadAllText(pathJson, System.Text.Encoding.UTF8);
             //JToken token = JObject.Parse(strJson);
@@ -87,3 +127,14 @@ namespace hsscms_bo
         public string namep { get; set; }
     }
 }
+
+
+
+///*Delete from [CatalogOrganisations].[dbo].[Cities];
+
+//DBCC CHECKIDENT ("[CatalogOrganisations].[dbo].[Cities]", RESEED, 0);*/
+
+
+//SELECT TOP(1000) [id]
+//      ,[name]
+//FROM[CatalogOrganisations].[dbo].[Cities];

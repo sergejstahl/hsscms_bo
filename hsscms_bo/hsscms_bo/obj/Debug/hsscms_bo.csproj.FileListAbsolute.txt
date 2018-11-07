@@ -19,3 +19,4 @@ G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.dll
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.xml
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.InitialCreate.resources
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csproj.GenerateResource.cache
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.meta.resources

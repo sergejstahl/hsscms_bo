@@ -75,6 +75,10 @@
     <Compile Include="Migrations\201811071222494_InitialCreate.Designer.cs">
       <DependentUpon>201811071222494_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811071930575_meta.cs" />
+    <Compile Include="Migrations\201811071930575_meta.Designer.cs">
+      <DependentUpon>201811071930575_meta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +98,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201811071222494_InitialCreate.resx">
       <DependentUpon>201811071222494_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811071930575_meta.resx">
+      <DependentUpon>201811071930575_meta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
