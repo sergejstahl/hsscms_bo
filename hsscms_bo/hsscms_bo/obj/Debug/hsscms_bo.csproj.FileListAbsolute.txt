@@ -8,3 +8,14 @@ G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.pdb
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\Newtonsoft.Json.dll
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\Newtonsoft.Json.xml
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csproj.CopyComplete
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\EntityFramework.dll
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\EntityFramework.SqlServer.dll
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\EntityFramework.xml
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\EntityFramework.SqlServer.xml
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\ru\EntityFramework.resources.dll
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.config
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.dll
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.xml
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.InitialCreate.resources
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csproj.GenerateResource.cache

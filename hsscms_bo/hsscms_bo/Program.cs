@@ -1,11 +1,13 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using hsscms_bo.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace hsscms_bo
 {
@@ -13,11 +15,31 @@ namespace hsscms_bo
     {
         static void Main(string[] args)
         {
-            string pathJson = @"G:\rep\hsscms_bo\predpr2.json";
-            var strJson = File.ReadAllText(pathJson, System.Text.Encoding.UTF8);
-            JToken token = JObject.Parse(strJson);
 
-            var tt = token.Select(x => x).ToList();
+            using (CatalogOrganisationsContext context = new CatalogOrganisationsContext())
+            {
+                var listCity = context.Cities.Select(x=>x).ToList();
+
+                City city = new City {
+                    id = 1,
+                    name = "brest"
+                };
+
+                var cityitem = context.Cities.Where(x => x.id == 1).FirstOrDefault()  ?? new City {
+                    id = 1,
+                    name = "brest"
+                };
+
+                context.Entry(cityitem).State = EntityState.Added;
+                context.SaveChanges();
+            }
+            
+            
+            //string pathJson = @"G:\rep\hsscms_bo\predpr2.json";
+            //var strJson = File.ReadAllText(pathJson, System.Text.Encoding.UTF8);
+            //JToken token = JObject.Parse(strJson);
+
+            //var tt = token.Select(x => x).ToList();
 
 
             //List<RowTest> list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<RowTest>>(strJson);
