@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using NLog;
 
 namespace hsscms_bo
 {
@@ -16,63 +17,71 @@ namespace hsscms_bo
         static void Main(string[] args)
         {
 
-            int iNew = 0;
-            int iUpdate = 0;
-            int iExist = 0;
+            // import data from json
+            StarterImportJson starterImportJson = new StarterImportJson();
+            starterImportJson.ImportFileJson(@"q:\rep\hsscms_bo\predpr.json");
 
-            using (CatalogOrganisationsContext context = new CatalogOrganisationsContext())
-            {
-                var listCity = context.Cities.Select(x => x).ToList();
+            //Logger logger = LogManager.GetCurrentClassLogger();
 
-                List<City> listNewCities = new List<City>();
-                listNewCities.Add(new City { id = 1, name = "Brest" });
-                listNewCities.Add(new City { id = 2, name = "Baranovichi" });
-                listNewCities.Add(new City { id = 3, name = "Pinsk" });
-                listNewCities.Add(new City { id = 4, name = "Kamenec" });
+            //int iNew = 0;
+            //int iUpdate = 0;
+            //int iExist = 0;
 
-                //IQueryable<City> iqCities = context.Cities.Where(x => listNewCities.Contains(x));
+            //using (CatalogOrganisationsContext context = new CatalogOrganisationsContext())
+            //{
+            //    context.Database.Log += logger.Trace;
 
-                foreach (City curCity in listNewCities)
-                {
-                    City curContextCity;
+            //    var listCity = context.Cities.Select(x => x).ToList();
 
-                    try
-                    {
-                        curContextCity = context.Cities.Where(x => x.id == curCity.id).FirstOrDefault();
-                    }
-                    catch (Exception ex)
-                    {
-                        curContextCity = null;
-                    }
+            //    List<City> listNewCities = new List<City>();
+            //    listNewCities.Add(new City { id = 1, name = "Brest" });
+            //    listNewCities.Add(new City { id = 2, name = "Baranovichi" });
+            //    listNewCities.Add(new City { id = 3, name = "Pinsk" });
+            //    listNewCities.Add(new City { id = 4, name = "Kamenec" });
+
+            //    //IQueryable<City> iqCities = context.Cities.Where(x => listNewCities.Contains(x));
+
+            //    foreach (City curCity in listNewCities)
+            //    {
+            //        City curContextCity;
+
+            //        try
+            //        {
+            //            curContextCity = context.Cities.Where(x => x.id == curCity.id).FirstOrDefault();
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            curContextCity = null;
+            //        }
 
 
-                    if (curContextCity == null)
-                    {
-                        context.Entry(curCity).State = EntityState.Added;
+            //        if (curContextCity == null)
+            //        {
+            //            context.Entry(curCity).State = EntityState.Added;
 
-                        iNew++;
-                    }
-                    else
-                    {
-                        if (!(curContextCity.name.Equals(curCity.name) && curContextCity.id.Equals(curCity.id)))
-                        {
-                            curContextCity.id = curCity.id;
-                            curContextCity.name = curCity.name;
-                            context.Entry(curContextCity).State = EntityState.Modified;
+            //            iNew++;
+            //        }
+            //        else
+            //        {
+            //            if (!(curContextCity.name.Equals(curCity.name) && curContextCity.id.Equals(curCity.id)))
+            //            {
+            //                curContextCity.id = curCity.id;
+            //                curContextCity.name = curCity.name;
+            //                context.Entry(curContextCity).State = EntityState.Modified;
 
-                            iUpdate++;
-                        }
-                        else
-                        {
-                            iExist++;
-                        }
-                    }
-                }
+            //                iUpdate++;
+            //            }
+            //            else
+            //            {
+            //                iExist++;
+            //            }
+            //        }
+            //    }
 
-                context.SaveChanges();
-            }
+            //    context.SaveChanges();
+            //}
 
-            Console.WriteLine($"new={iNew}, update={iUpdate}, exist={iExist}");
+            //Console.WriteLine($"new={iNew}, update={iUpdate}, exist={iExist}");
             Console.Read();
 
             //string pathJson = @"G:\rep\hsscms_bo\predpr2.json";
@@ -130,7 +139,7 @@ namespace hsscms_bo
 
 
 
-///*Delete from [CatalogOrganisations].[dbo].[Cities];
+//*Delete from [CatalogOrganisations].[dbo].[Cities];
 
 //DBCC CHECKIDENT ("[CatalogOrganisations].[dbo].[Cities]", RESEED, 0);*/
 

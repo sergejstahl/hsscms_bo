@@ -8,7 +8,6 @@ namespace hsscms_bo.Logic
 {
     public class City
     {
-        public int id { get; set; }
         public string name { get; set; }
     }
 }
