@@ -11,7 +11,7 @@
         {
         }
 
-        //public DbSet<Organisation> Organisations { get; set; }
+        public DbSet<Organisation> Organisations { get; set; }
         public DbSet<City> Cities { get; set; }
     }
 

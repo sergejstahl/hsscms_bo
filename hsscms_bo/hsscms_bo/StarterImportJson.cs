@@ -25,45 +25,46 @@ namespace hsscms_bo
             var strJson = File.ReadAllText(pathJson, System.Text.Encoding.UTF8);
             List<RowOrgs> listOrgs = JsonConvert.DeserializeObject<List<RowOrgs>>(strJson);
 
-
             using (context = new CatalogOrganisationsContext())
             {
                 //context.Database.Log += log.Trace;
 
                 foreach (var curRow in listOrgs)
                 {
-                    if (!curRow.gorod.Equals(String.Empty))
+                    City city = null;
+                    if (curRow.gorod != null && !curRow.gorod.Equals(String.Empty))
                     {
-                        CheckCity(curRow.gorod);
+                        city = CheckCity(curRow.gorod);
                     }
-                }
 
-                context.SaveChanges();
+                    Organisation itemOrg = context.Organisations.Where(x => x.oid == curRow.id).Select(x => x).FirstOrDefault();
+                    if (itemOrg == null)
+                    {
+                        log.Trace($"{curRow.titul} - add");
+                        Organisation curOrganisation = new Organisation { oid = curRow.id, titleName = curRow.titul, city = city };
+                        context.Entry(curOrganisation).State = EntityState.Added;
+                    }
+                    context.SaveChanges();
+                }
             }
         }
 
 
-        private void CheckCity(string strCity)
+        private City CheckCity(string strCity)
         {
             City itemCity = null;
 
-            try
-            {
-                itemCity = context.Cities.Where(x => x.name == strCity).Select(x => x).FirstOrDefault();
-            }
-            finally
-            {
-                if (itemCity == null)
-                {
-                    log.Trace($"{strCity} - add");
-                    City curCity = new City { name = strCity };
-                    context.Entry(curCity).State = EntityState.Added;
-                }
-                else
-                {
-                    log.Trace($"{strCity} - exist");
-                }
-            }
+            itemCity = context.Cities.Where(x => x.name == strCity).Select(x => x).FirstOrDefault();
+            if (itemCity != null)
+                return itemCity;
+
+            City curCity = new City { name = strCity };
+            context.Entry(curCity).State = EntityState.Added;
+            context.SaveChanges();
+
+            log.Trace($"{strCity} - add");
+
+            return curCity;
         }
     }
 
@@ -74,5 +75,8 @@ namespace hsscms_bo
 
         [JsonProperty("gorod")]
         public string gorod { get; set; }
+
+        [JsonProperty("titul")]
+        public string titul { get; set; }
     }
 }
