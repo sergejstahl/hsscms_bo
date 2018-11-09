@@ -14,10 +14,12 @@ namespace hsscms_bo.Entities
 
         [Required]
         public int oid { get; set; }
+        public int wyw { get; set; }
 
         public string shortName { get; set; }
         public string titleName { get; set; }
         public string fullName { get; set; }
+
         public string foundingDate { get; set; }
         public string description { get; set; }
         public City city { get; set; }

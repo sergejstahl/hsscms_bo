@@ -24,6 +24,9 @@ namespace hsscms_bo
 
 //DBCC CHECKIDENT ("[CatalogOrganisations].[dbo].[Cities]", RESEED, 0);*/
 
+//Delete from[CatalogOrganisations].[dbo].[Organisations];
+//DBCC CHECKIDENT("[CatalogOrganisations].[dbo].[Organisations]", RESEED, 0);
+
 
 //SELECT TOP(1000) [id]
 //      ,[name]

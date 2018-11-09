@@ -41,14 +41,23 @@ namespace hsscms_bo
                     if (itemOrg == null)
                     {
                         log.Trace($"{curRow.titul} - add");
-                        Organisation curOrganisation = new Organisation { oid = curRow.id, titleName = curRow.titul, city = city };
+
+                        Organisation curOrganisation = new Organisation {
+                            oid = curRow.id,
+                            wyw = curRow.wyw,
+                            titleName = curRow.nam,
+                            shortName = curRow.titul,
+                            fullName = curRow.namep,
+                            foundingDate = curRow.dates,
+                            description = curRow.opis,
+                            city = city
+                        };
                         context.Entry(curOrganisation).State = EntityState.Added;
                     }
                     context.SaveChanges();
                 }
             }
         }
-
 
         private City CheckCity(string strCity)
         {
@@ -73,10 +82,91 @@ namespace hsscms_bo
         [JsonProperty("id")]
         public int id { get; set; }
 
-        [JsonProperty("gorod")]
-        public string gorod { get; set; }
+        [JsonProperty("wyw")]
+        public int wyw { get; set; }
+
+        [JsonProperty("namep")]
+        public string namep { get; set; }
 
         [JsonProperty("titul")]
         public string titul { get; set; }
+
+        [JsonProperty("nam")]
+        public string nam { get; set; }
+
+        [JsonProperty("dates")]
+        public string dates { get; set; }
+
+        [JsonProperty("vedom")]
+        public string vedom { get; set; }
+
+        [JsonProperty("opis")]
+        public string opis { get; set; }
+
+        [JsonProperty("ochta")]
+        public string ochta { get; set; }
+
+        [JsonProperty("region")]
+        public string region { get; set; }
+
+        [JsonProperty("gorod")]
+        public string gorod { get; set; }
+
+        [JsonProperty("ulica")]
+        public string ulica { get; set; }
+
+        [JsonProperty("rajong")]
+        public string rajong { get; set; }
+
+        [JsonProperty("telefon")]
+        public string telefon { get; set; }
+
+        [JsonProperty("fax")]
+        public string fax { get; set; }
+
+        [JsonProperty("email")]
+        public string email { get; set; }
+
+        [JsonProperty("url")]
+        public string url { get; set; }
+
+        [JsonProperty("towar")]
+        public string towar { get; set; }
+
+        [JsonProperty("opistow")]
+        public string opistow { get; set; }
+
+        [JsonProperty("znak_ris")]
+        public string znak_ris { get; set; }
+
+        [JsonProperty("opisl")]
+        public string opisl { get; set; }
+
+        [JsonProperty("opisd")]
+        public string opisd { get; set; }
+
+        [JsonProperty("rekl_ris")]
+        public string rekl_ris { get; set; }
+
+        [JsonProperty("otrasl")]
+        public string otrasl { get; set; }
+
+        [JsonProperty("istor")]
+        public string istor { get; set; }
+
+        [JsonProperty("face_ris")]
+        public string face_ris { get; set; }
+
+        [JsonProperty("meta")]
+        public string meta { get; set; }
+
+        [JsonProperty("data_izm")]
+        public string data_izm { get; set; }
+
+        [JsonProperty("sluzebnaja")]
+        public string sluzebnaja { get; set; }
+
+        [JsonProperty("sort")]
+        public int sort { get; set; }
     }
 }

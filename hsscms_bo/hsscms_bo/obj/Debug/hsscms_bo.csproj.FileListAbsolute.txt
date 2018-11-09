@@ -45,3 +45,5 @@ Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.pdb
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.city_org.resources
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.city_org.resources
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Org.resources
+Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Org.resources
+Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Org_names.resources
