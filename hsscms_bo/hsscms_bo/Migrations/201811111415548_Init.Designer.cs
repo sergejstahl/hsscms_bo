@@ -7,13 +7,13 @@ namespace hsscms_bo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class city_org : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(city_org));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811081302025_city_org"; }
+            get { return "201811111415548_Init"; }
         }
         
         string IMigrationMetadata.Source

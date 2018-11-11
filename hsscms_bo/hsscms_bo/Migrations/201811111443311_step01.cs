@@ -3,16 +3,16 @@ namespace hsscms_bo.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Org_names : DbMigration
+    public partial class step01 : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Organisations", "wyw", c => c.Int(nullable: false));
+            AddColumn("dbo.Contacts", "value", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Organisations", "wyw");
+            DropColumn("dbo.Contacts", "value");
         }
     }
 }

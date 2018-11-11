@@ -7,13 +7,13 @@ namespace hsscms_bo.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class meta : IMigrationMetadata
+    public sealed partial class step01 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(meta));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(step01));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811071930575_meta"; }
+            get { return "201811111443311_step01"; }
         }
         
         string IMigrationMetadata.Source

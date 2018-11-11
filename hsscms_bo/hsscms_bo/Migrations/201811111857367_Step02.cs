@@ -3,16 +3,16 @@ namespace hsscms_bo.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class meta : DbMigration
+    public partial class Step02 : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Cities", "name", c => c.String(nullable: false, maxLength: 30));
+            AlterColumn("dbo.Adresses", "index", c => c.String());
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Cities", "name", c => c.String());
+            AlterColumn("dbo.Adresses", "index", c => c.Int(nullable: false));
         }
     }
 }

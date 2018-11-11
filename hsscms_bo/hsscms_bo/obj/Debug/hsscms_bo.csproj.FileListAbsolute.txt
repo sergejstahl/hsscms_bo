@@ -17,9 +17,6 @@ G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\ru\EntityFramework.SqlServer.reso
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.config
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.dll
 G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.xml
-G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.InitialCreate.resources
-G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csproj.GenerateResource.cache
-G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.meta.resources
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\NLog.config
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\hsscms_bo.exe.config
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\bin\Debug\hsscms_bo.exe
@@ -43,7 +40,10 @@ Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csproj.CopyComplete
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.exe
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.pdb
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.city_org.resources
-G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.city_org.resources
-G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Org.resources
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Org.resources
 Q:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Org_names.resources
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Init.resources
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.csproj.GenerateResource.cache
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.step01.resources
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Step02.resources
+G:\rep\hsscms_bo\hsscms_bo\hsscms_bo\obj\Debug\hsscms_bo.Migrations.Step03.resources

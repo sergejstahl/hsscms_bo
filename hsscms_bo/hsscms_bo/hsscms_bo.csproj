@@ -67,29 +67,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Adress.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\CatalogOrganisationsContext.cs" />
-    <Compile Include="Logic\City.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\ContactType.cs" />
+    <Compile Include="Entities\Good.cs" />
     <Compile Include="Entities\Organisation.cs" />
-    <Compile Include="Migrations\201811071222494_InitialCreate.cs" />
-    <Compile Include="Migrations\201811071222494_InitialCreate.Designer.cs">
-      <DependentUpon>201811071222494_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201811111415548_Init.cs" />
+    <Compile Include="Migrations\201811111415548_Init.Designer.cs">
+      <DependentUpon>201811111415548_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811071930575_meta.cs" />
-    <Compile Include="Migrations\201811071930575_meta.Designer.cs">
-      <DependentUpon>201811071930575_meta.cs</DependentUpon>
+    <Compile Include="Migrations\201811111443311_step01.cs" />
+    <Compile Include="Migrations\201811111443311_step01.Designer.cs">
+      <DependentUpon>201811111443311_step01.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811081302025_city_org.cs" />
-    <Compile Include="Migrations\201811081302025_city_org.Designer.cs">
-      <DependentUpon>201811081302025_city_org.cs</DependentUpon>
+    <Compile Include="Migrations\201811111857367_Step02.cs" />
+    <Compile Include="Migrations\201811111857367_Step02.Designer.cs">
+      <DependentUpon>201811111857367_Step02.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811082135078_Org.cs" />
-    <Compile Include="Migrations\201811082135078_Org.Designer.cs">
-      <DependentUpon>201811082135078_Org.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811091412376_Org_names.cs" />
-    <Compile Include="Migrations\201811091412376_Org_names.Designer.cs">
-      <DependentUpon>201811091412376_Org_names.cs</DependentUpon>
+    <Compile Include="Migrations\201811111918390_Step03.cs" />
+    <Compile Include="Migrations\201811111918390_Step03.Designer.cs">
+      <DependentUpon>201811111918390_Step03.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -109,21 +108,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811071222494_InitialCreate.resx">
-      <DependentUpon>201811071222494_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811111415548_Init.resx">
+      <DependentUpon>201811111415548_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811071930575_meta.resx">
-      <DependentUpon>201811071930575_meta.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811111443311_step01.resx">
+      <DependentUpon>201811111443311_step01.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811081302025_city_org.resx">
-      <DependentUpon>201811081302025_city_org.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811111857367_Step02.resx">
+      <DependentUpon>201811111857367_Step02.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811082135078_Org.resx">
-      <DependentUpon>201811082135078_Org.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811111918390_Step03.resx">
+      <DependentUpon>201811111918390_Step03.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811091412376_Org_names.resx">
-      <DependentUpon>201811091412376_Org_names.cs</DependentUpon>
-    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

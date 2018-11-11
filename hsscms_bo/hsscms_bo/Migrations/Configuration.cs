@@ -10,9 +10,11 @@ namespace hsscms_bo.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "hsscms_bo.Entities.CatalogOrganisationsContext";
         }
 
-        protected override void Seed(hsscms_bo.Entities.CatalogOrganisationsContext context) { }
+        protected override void Seed(hsscms_bo.Entities.CatalogOrganisationsContext context)
+        {
+            
+        }
     }
 }
