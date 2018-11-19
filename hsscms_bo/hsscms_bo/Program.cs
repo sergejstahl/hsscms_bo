@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Configuration;
+using System.Windows;
+using ui;
 
 namespace hsscms_bo
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
-            // import data from json
-            StarterImportJson starterImportJson = new StarterImportJson();
-            starterImportJson.ImportFileJson(ConfigurationManager.AppSettings["pathImportJsonPredpr"]);
+            var app = new Application();
+            app.Run(new ui.MainWindow());
 
-            Console.Read();
+            //// import data from json
+            //StarterImportJson starterImportJson = new StarterImportJson();
+            //starterImportJson.ImportFileJson(ConfigurationManager.AppSettings["pathImportJsonPredpr"]);
         }
     }
 }
