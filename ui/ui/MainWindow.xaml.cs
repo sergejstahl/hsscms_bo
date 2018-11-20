@@ -26,7 +26,7 @@ namespace ui
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ImportJsonOrganisations_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Import json Organisation?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
@@ -38,7 +38,7 @@ namespace ui
             }
         }
 
-        private void Button_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        private void ImportJsonOrganisations_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Erase Organisation?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
@@ -48,6 +48,14 @@ namespace ui
 
                 MessageBox.Show($"Erase Organisation, {timeSec}", "Result");
             }
+        }
+
+        private void GenerationOragnisations_Click(object sender, RoutedEventArgs e)
+        {
+            GenerationPages generationPages = new GenerationPages();
+            string timeSec = generationPages.GenerationOrganisation();
+
+            MessageBox.Show($"Generation Organisation pages, {timeSec}", "Result");
         }
     }
 }

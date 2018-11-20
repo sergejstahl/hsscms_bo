@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Import json Organisations" Margin="38,36,591,0" VerticalAlignment="Top" Click="Button_Click" ContextMenuOpening="Button_ContextMenuOpening" />
+        <Button Content="Import json Organisations" Margin="38,36,591,0" VerticalAlignment="Top" Click="ImportJsonOrganisations_Click" ContextMenuOpening="ImportJsonOrganisations_ContextMenuOpening" />
+        <Button Content="Generation Oragnisations" HorizontalAlignment="Left" Margin="38,74,0,0" VerticalAlignment="Top" Width="163" Click="GenerationOragnisations_Click"/>
 
     </Grid>
 </Window>

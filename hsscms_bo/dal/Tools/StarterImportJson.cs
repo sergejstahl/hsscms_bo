@@ -23,38 +23,90 @@ namespace dal.Tools
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            using (context = new CatalogOrganisationsContext())
-            {
-                var contactTypes = context.ContactTypes;
-
-                if (contactTypes != null)
+                string stringExeption = null;
+                try
                 {
-                    foreach (ContactType curContactType in contactTypes)
+                    using (context = new CatalogOrganisationsContext())
                     {
-                        log.Trace($"ContactType-Del: {curContactType.name}");
+                        var contacts = context.Contacts;
+                        if (contacts != null)
+                        {
+                            foreach (Contact curContact in contacts)
+                            {
+                                log.Trace($"Contact-Del: {curContact.description}-{curContact.value}");
+                                context.Entry(curContact).State = EntityState.Deleted;
+                            }
+                            context.SaveChanges();
+                        }
 
-                        context.Entry(curContactType).State = EntityState.Deleted;
+                        var goods = context.Goods;
+                        if (goods != null)
+                        {
+                            foreach (Good curGood in goods)
+                            {
+                                log.Trace($"Good-Del: {curGood.description}");
+                                context.Entry(curGood).State = EntityState.Deleted;
+                            }
+                            context.SaveChanges();
+                        }
+
+                        var contactTypes = context.ContactTypes;
+                        if (contactTypes != null)
+                        {
+                            foreach (ContactType curContactType in contactTypes)
+                            {
+                                log.Trace($"ContactType-Del: {curContactType.name}");
+                                context.Entry(curContactType).State = EntityState.Deleted;
+                            }
+                            context.SaveChanges();
+                        }
+
+                        var organisations = context.Organisations;
+                        if (organisations != null)
+                        {
+                            foreach (Organisation curOrg in organisations)
+                            {
+                                log.Trace($"Organisation-Del: {curOrg.titleName}");
+                                context.Entry(curOrg).State = EntityState.Deleted;
+                            }
+                            context.SaveChanges();
+                        }
+
+                        var adresess = context.Adreses;
+                        if (adresess != null)
+                        {
+                            foreach (Adress curAdress in adresess)
+                            {
+                                log.Trace($"Adress-Del: {curAdress.index}-{curAdress.street}-{curAdress.region}");
+                                context.Entry(curAdress).State = EntityState.Deleted;
+                            }
+                            context.SaveChanges();
+                        }
+
+                        var cities = context.Cities;
+                        if (cities != null)
+                        {
+                            foreach (City curCity in cities)
+                            {
+                                log.Trace($"City-Del: {curCity.name}");
+                                context.Entry(curCity).State = EntityState.Deleted;
+                            }
+                            context.SaveChanges();
+                        }
                     }
-                    context.SaveChanges();
                 }
-
-                var cities = context.Cities;
-
-                if (cities != null)
+                catch (Exception ex)
                 {
-                    foreach (City curCity in cities)
-                    {
-                        log.Trace($"City-Del: {curCity.name}");
-
-                        context.Entry(curCity).State = EntityState.Deleted;
-                    }
-                    context.SaveChanges();
+                    stringExeption = ex.ToString();
                 }
-            }
 
             sw.Stop();
             string timeSec = (sw.ElapsedMilliseconds / 1000).ToString();
-            log.Trace($"Erased complited: {timeSec}");
+
+            if (stringExeption == null)
+                log.Trace($"Erased complited: {timeSec}");
+            else
+                log.Trace($"Erased error: {timeSec}" + System.Environment.NewLine + stringExeption);
 
             return timeSec;
         }
@@ -208,9 +260,10 @@ namespace dal.Tools
                     };
 
                     context.Entry(curOrganisation).State = EntityState.Added;
-                    //context.SaveChanges();
 
                     log.Trace($"Org-Add: {itemRow.titul}");
+
+                    break;
                 }
                 context.SaveChanges();
             }
@@ -237,7 +290,7 @@ namespace dal.Tools
                 if (itemContactType == null)
                 {
                     ContactType contactType = new ContactType { name = ctName };
-                    context.Entry(contactType).State = EntityState.Added;
+                    context.ContactTypes.Add(contactType);
                     context.SaveChanges();
 
                     log.Trace($"ContactType-Add: {ctName}");
@@ -256,7 +309,7 @@ namespace dal.Tools
                         continue;
 
                     City curCity = new City { name = itemRow.gorod };
-                    context.Entry(curCity).State = EntityState.Added;
+                    context.Cities.Add(curCity);
                     context.SaveChanges();
 
                     log.Trace($"City-Add: {itemRow.gorod}");

@@ -15,10 +15,10 @@ namespace dal.Migrations
                         index = c.String(),
                         region = c.String(),
                         street = c.String(),
-                        city_id = c.Int(),
+                        city_id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.Cities", t => t.city_id)
+                .ForeignKey("dbo.Cities", t => t.city_id, cascadeDelete: true)
                 .Index(t => t.city_id);
             
             CreateTable(
@@ -26,7 +26,7 @@ namespace dal.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        name = c.String(nullable: false, maxLength: 30),
+                        name = c.String(nullable: false, maxLength: 25),
                     })
                 .PrimaryKey(t => t.id);
             

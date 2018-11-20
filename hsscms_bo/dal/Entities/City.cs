@@ -13,7 +13,6 @@ namespace dal.Entities
         public int id { get; set; }
 
         [Required]
-        [MaxLength(30)]
         public string name { get; set; }
     }
 }
